@@ -2,7 +2,7 @@ FROM ashchan/ruby-2.1.2
 
 MAINTAINER Rodrigo Saito <rodrigo.saito@gmail.com>
 
-COPY . /app/
+ADD . /app/
 
 WORKDIR /app/
 
