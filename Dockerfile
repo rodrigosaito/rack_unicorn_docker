@@ -8,4 +8,4 @@ WORKDIR /app/
 
 RUN bundle install
 
-ENTRYPOINT [ "unicorn", "-e", "$ENV" ]
+ENTRYPOINT [ "unicorn", "-E", "$ENV" ]
