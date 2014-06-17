@@ -6,6 +6,7 @@ ADD . /app/
 
 WORKDIR /app/
 
-RUN bundle install
+RUN bundle installi --deployment --without development test --jobs 4
 
-ENTRYPOINT [ "unicorn", "-E", "$ENV" ]
+ENTRYPOINT [ "bundle", "exec", "unicorn", "-E", "$ENV" ]
+
