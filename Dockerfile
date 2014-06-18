@@ -10,3 +10,5 @@ RUN bundle install --deployment --without development test --jobs 4
 
 ENTRYPOINT [ "bundle", "exec", "unicorn", "-E", "$ENV" ]
 
+EXPOSE 8080
+
