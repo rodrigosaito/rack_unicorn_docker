@@ -19,6 +19,6 @@ build:
     - script:
         name: save container
         code: |
-          docker run -d --cid-file="/tmp/cid" rodrigosaito/rack_unicorn_docker
+          docker run -d --cidfile="/tmp/cid" rodrigosaito/rack_unicorn_docker
           docker export $(echo /tmp/cid) > $WERCKER_OUTPUT_DIR/container.tar
 
