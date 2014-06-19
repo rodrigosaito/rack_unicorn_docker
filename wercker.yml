@@ -9,5 +9,10 @@ build:
     - script:
         name: pull docker image
         code: |
-          docker pull litaio/ruby
+          docker build -t rodrigosaito/rack_unicorn_docker .
+
+    - script:
+        name: run tests
+        code: |
+          docker run rodrigosaito/rack_unicorn_docker bundle exec rspec
 
