@@ -1,0 +1,13 @@
+box: wercker-labs/docker
+build:
+  steps:
+    - script:
+      name: docker version
+      code: |
+        docker -v
+
+    - script:
+      name: pull ruby image
+      code: |
+        docker pull litaio/ruby
+
