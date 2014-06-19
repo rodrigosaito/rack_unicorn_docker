@@ -7,18 +7,22 @@ build:
           docker -v
 
     - script:
+        name: export image name
+        code: |
+          export DOCKER_IMAGE_NAME=rodrigosaito/rack_unicorn_docker:$WERCKER_GIT_COMMIT
+    - script:
         name: build image
         code: |
-          docker build -t rodrigosaito/rack_unicorn_docker:$WERCKER_GIT_COMMIT .
+          docker build -t $DOCKER_IMAGE_NAME .
 
     - script:
         name: run tests
         code: |
-          docker run rodrigosaito/rack_unicorn_docker:$WERCKER_GIT_COMMIT bundle exec rspec
+          docker run $DOCKER_IMAGE_NAME bundle exec rspec
 
     - script:
         name: save container
         code: |
-          docker run -d --cidfile="/tmp/cid" rodrigosaito/rack_unicorn_docker
+          docker run -d --cidfile="/tmp/cid" $DOCKER_IMAGE_NAME 
           docker export $(cat /tmp/cid) > $WERCKER_OUTPUT_DIR/container.tar
 
