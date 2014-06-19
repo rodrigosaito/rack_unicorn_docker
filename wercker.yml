@@ -7,7 +7,7 @@ build:
           docker -v
 
     - script:
-        name: pull docker image
+        name: build image
         code: |
           docker build -t rodrigosaito/rack_unicorn_docker .
 
