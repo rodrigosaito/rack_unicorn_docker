@@ -9,7 +9,7 @@ build:
     - script:
         name: build image
         code: |
-          docker build -t rodrigosaito/rack_unicorn_docker .
+          docker build -t rodrigosaito/rack_unicorn_docker:$WERCKER_GIT_COMMIT .
 
     - script:
         name: run tests
