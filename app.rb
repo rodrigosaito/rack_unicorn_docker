@@ -1,12 +1,5 @@
 require "sinatra"
 
 get "/hello" do
-  puts "#{ENV['RACK_ENV']}"
-  "It works!"
+  "It works! RACK_ENV variable = #{ENV['RACK_ENV']}"
 end
-
-get "/khara" do
-  puts "#{ENV['RACK_ENV']}"
-  "Khara"
-end
-

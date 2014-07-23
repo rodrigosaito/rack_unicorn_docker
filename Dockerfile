@@ -8,7 +8,8 @@ WORKDIR /app/
 
 RUN bundle install --deployment --without development test --jobs 4
 
-CMD [ "bundle", "exec", "unicorn", "-E", "$ENV" ]
+ENV RACK_ENV development
+
+CMD bundle exec unicorn -E $RACK_ENV
 
 EXPOSE 8080
-
