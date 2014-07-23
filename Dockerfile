@@ -1,4 +1,4 @@
-FROM ashchan/ruby-2.1.2
+FROM rodrigosaito/ruby:2.1.2
 
 MAINTAINER Rodrigo Saito <rodrigo.saito@gmail.com>
 
